@@ -19,8 +19,8 @@ describe('ticTacToe', function(){
 
       //assert
       const expected = `. . .
-      . . .
-      . . .`
+. . .
+. . .`
       expect(startBoard).to.equal(expected)
 
     });

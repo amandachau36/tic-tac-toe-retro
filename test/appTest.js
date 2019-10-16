@@ -8,7 +8,9 @@ describe('ticTacToe', function(){
 
   describe('currentBoard()', function(){
     beforeEach(function(){
-      ticTacToe = new Tic();
+      ticTacToe = new Tic({
+        lastTurn: "X"
+      });
     });
 
     it('should start with an empty board', function(){
@@ -31,9 +33,11 @@ describe('ticTacToe', function(){
 
   describe('prompt()', function(){
     beforeEach(function(){
-      ticTacToe = new Tic();
+      ticTacToe = new Tic({
+        lastTurn: "X"
+      });
     });
-    it('should return the location "5,5"', function(){
+    it('should return the location 5,5', function(){
 
       //arrange
 
@@ -46,19 +50,21 @@ describe('ticTacToe', function(){
     });
   }); // prompt()
 
-  describe('prompt()', function(){
+  describe('currentTurn()', function(){
     beforeEach(function(){
-      ticTacToe = new Tic();
+      ticTacToe = new Tic({
+        lastTurn: "X"
+      });
     });
-    it('should return the location "5,5"', function(){
+    it('should return O when the lastTurn is X', function(){
 
       //arrange
 
       //act
-      const response = ticTacToe.prompt("5,5");
+      const response = ticTacToe.currentTurn();
 
       //assert
-      expect(response).to.equal("5,5");
+      expect(response).to.equal("O");
 
     });
   }); // prompt

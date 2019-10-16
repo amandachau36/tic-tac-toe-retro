@@ -5,9 +5,12 @@ const Tic = require('./lib/tic.js');
 // })
 
 
-const ticTacToe = new Tic();
+const ticTacToe = new Tic({
+  lastTurn: "X"
+});
 
+// console.log(ticTacToe.currentTurn())
 
+// ticTacToe.prompt();
 
-ticTacToe.prompt();
 // ticTacToe.currentBoard();

@@ -4,6 +4,7 @@
   },
   "dependencies": {
     "chai": "^4.2.0",
-    "mocha": "^6.2.1"
+    "mocha": "^6.2.1",
+    "readline-sync": "^1.4.10"
   }
 }

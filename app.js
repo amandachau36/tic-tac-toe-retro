@@ -6,7 +6,7 @@ const Tic = require('./lib/tic.js');
 
 
 const ticTacToe = new Tic({
-  lastTurn: "X"
+  lastTurn: "O"
 });
 
 // console.log(ticTacToe.currentTurn())

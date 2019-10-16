@@ -1,9 +1,13 @@
 const Tic = require('./lib/tic.js');
-const readline = require('readline');
+// const readline = require('readline').createInterface({
+//   input: process.stdin,
+//   output: process.stdout
+// })
+
 
 const ticTacToe = new Tic();
 
 
 
-
-ticTacToe.currentBoard();
+ticTacToe.prompt();
+// ticTacToe.currentBoard();

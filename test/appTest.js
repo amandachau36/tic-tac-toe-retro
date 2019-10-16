@@ -1,5 +1,6 @@
 const expect = require('chai').expect;
 const Tic = require('../lib/tic.js');
+const readline = require('readline');
 
 let ticTacToe;
 
@@ -24,8 +25,43 @@ describe('ticTacToe', function(){
       expect(startBoard).to.equal(expected)
 
     });
-  });
 
+  }); // currentBoard();
+
+
+  describe('prompt()', function(){
+    beforeEach(function(){
+      ticTacToe = new Tic();
+    });
+    it('should return the location "5,5"', function(){
+
+      //arrange
+
+      //act
+      const response = ticTacToe.prompt("5,5");
+
+      //assert
+      expect(response).to.equal("5,5");
+
+    });
+  }); // prompt()
+
+  describe('prompt()', function(){
+    beforeEach(function(){
+      ticTacToe = new Tic();
+    });
+    it('should return the location "5,5"', function(){
+
+      //arrange
+
+      //act
+      const response = ticTacToe.prompt("5,5");
+
+      //assert
+      expect(response).to.equal("5,5");
+
+    });
+  }); // prompt
 
 
 });

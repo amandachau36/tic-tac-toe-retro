@@ -6,29 +6,29 @@ let ticTacToe;
 
 describe('ticTacToe', function(){
 
-  describe('currentBoard()', function(){
-    beforeEach(function(){
-      ticTacToe = new Tic({
-        lastTurn: "O"
-      });
-    });
-
-    it('should start with an empty board', function(){
-
-      //arrange
-
-      //act
-      const startBoard = ticTacToe.currentBoard();
-
-      //assert
-      const expected = `. . .
-. . .
-. . .`
-      expect(startBoard).to.equal(expected)
-
-    });
-
-  }); // currentBoard();
+//   describe('updateBoard()', function(){
+//     beforeEach(function(){
+//       ticTacToe = new Tic({
+//         lastTurn: "O"
+//       });
+//     });
+//
+//     it('should start with an empty board', function(){
+//
+//       //arrange
+//
+//       //act
+//       const startBoard = ticTacToe.updateBoard();
+//
+//       //assert
+//       const expected = `. . .
+// . . .
+// . . .`
+//       expect(startBoard).to.equal(expected)
+//
+//     });
+//
+//   }); // currentBoard();
 
 
   describe('prompt()', function(){
@@ -37,15 +37,15 @@ describe('ticTacToe', function(){
         lastTurn: "O"
       });
     });
-    it('should return the location 5,5', function(){
+    it('should return the location 1,1', function(){
 
       //arrange
 
       //act
-      const response = ticTacToe.prompt("5,5");
+      const response = ticTacToe.prompt("1,1");
 
       //assert
-      expect(response).to.equal("5,5");
+      expect(response).to.equal("1,1");
 
     });
   }); // prompt()
@@ -64,12 +64,84 @@ describe('ticTacToe', function(){
       const response = ticTacToe.currentTurn();
 
       //assert
-      expect(response).to.equal("O");
+      expect(response).to.equal("X");
 
     });
   }); // currentTurn()
 
+  // describe('isPlayValid()', function(){
+  //   beforeEach(function(){
+  //     ticTacToe = new Tic({
+  //       lastTurn: "O"
+  //     });
+  //   });
+  //   it('should return true when user selects a space that is not currently occupied', function(){
+  //
+  //     //arrange
+  //     const inputLocation = "1,1"
+  //
+  //     //act
+  //     const response = ticTacToe.isPlayValid(inputLocation);
+  //
+  //     //assert
+  //     expect(response).to.equal(true);
+  //
+  //   });
+  // }); // isPlayValid()
 
+  describe('updateGameStatus()', function(){
+    beforeEach(function(){
+      ticTacToe = new Tic({
+        lastTurn: "O"
+      });
+    });
+    it('should place an X in the top left hand corner', function(){
+
+      //arrange
+      const inputLocation = "1,1"
+
+      //act
+      ticTacToe.updateGameStatus(inputLocation);
+      const response = ticTacToe.gameStatus[0][0];
+
+      //assert
+      expect(response).to.equal("X");
+
+    });
+    it('should inform player that "11" is not a valid coord', function(){
+
+      //arrange
+      const inputLocation = "11"
+
+      //act
+      const response = ticTacToe.updateGameStatus(inputLocation);
+
+
+      //assert
+      expect(response).to.equal(`${inputLocation} is not a valid coord. Try again...`);
+
+    });
+  }); // getPosition()
+
+  // describe('isPlayValid', function(){
+  //   beforeEach(function(){
+  //     ticTacToe = new Tic({
+  //       lastTurn: "X"
+  //     });
+  //   });
+  //   it('should return true when user selects a space that is not currently occupied', function(){
+  //
+  //     //arrange
+  //     const inputLocation = "1,1"
+  //
+  //     //act
+  //     const response = ticTacToe.isPlayValid(inputLocation);
+  //
+  //     //assert
+  //     expect(response).to.equal(true);
+  //
+  //   });
+  // }); // isPlayValid()
 
 
 });

@@ -16,4 +16,4 @@ const ticTacToe = new Tic({
 // console.log(ticTacToe.updateBoard());
 //
 // ticTacToe.isPlayValid();
-ticTacToe.updateGameStatus("1,1");
+ticTacToe.updateGameStatus();

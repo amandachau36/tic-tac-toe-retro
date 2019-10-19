@@ -152,21 +152,41 @@ describe('ticTacToe', function(){
         lastTurn: "O"
       });
     });
-    it('should notify players of a win when there are 3 "X"s or "O"s in a row', function(){
+    it('should notify players of a win when there are 3 "X"s or "O"s in a ROW', function(){
 
       //arrange
       ticTacToe.gameStatus = [
-        ["X", "X", "X"],
+        ["O", "O", "O"],
         [".", ".", "."],
-        ["", ".", "."]
+        [".", ".", "."]
       ];
+      const player = "O";
 
       //act
-      const response = ticTacToe.checkForWin("X");
+
+      const response = ticTacToe.checkForWin(player);
 
       //assert
       expect(response).to.equal(true);
     });
+    it('should notify players of a win when there are 3 "X"s or "O"s in a COLUMN', function(){
+
+      //arrange
+      ticTacToe.gameStatus = [
+        ["X", ".", "."],
+        ["X", ".", "."],
+        ["X", ".", "."]
+      ];
+      const player = "X";
+
+      //act
+
+      const response = ticTacToe.checkForWin(player);
+
+      //assert
+      expect(response).to.equal(true);
+    });
+
   }); // checkForWin()
 
 });

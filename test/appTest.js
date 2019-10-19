@@ -72,7 +72,7 @@ describe('ticTacToe', function(){
     });
     it('should place an X in the top left hand corner', function(){
       //arrange
-      const inputLocation = "1,1"
+      const inputLocation = "1,1";
 
       //act
       ticTacToe.updateGameStatus(inputLocation);
@@ -84,7 +84,7 @@ describe('ticTacToe', function(){
     });
     it('should inform player that "11" is not a valid coord', function(){
       //arrange
-      const inputLocation = "11"
+      const inputLocation = "11";
 
       //act
       const response = ticTacToe.updateGameStatus(inputLocation);
@@ -96,7 +96,7 @@ describe('ticTacToe', function(){
 
     it('should inform player that "1,4" is not a valid coord', function(){
       //arrange
-      const inputLocation = "1,4"
+      const inputLocation = "1,4";
 
       //act
       const response = ticTacToe.updateGameStatus(inputLocation);
@@ -108,7 +108,7 @@ describe('ticTacToe', function(){
 
     it('should inform player that "1,3" is not a valid coord when it is already occupied', function(){
       //arrange
-      const inputLocation = "1,3"
+      const inputLocation = "1,3";
       ticTacToe.gameStatus = [
         [".", ".", "X"],
         [".", ".", "."],
@@ -124,7 +124,7 @@ describe('ticTacToe', function(){
 
     it('should add 1 move to numOfMoves for every valid turn', function(){
       //arrange
-      const inputLocation = "2,1"
+      const inputLocation = "2,1";
 
       //act
       ticTacToe.updateGameStatus(inputLocation);
@@ -135,7 +135,7 @@ describe('ticTacToe', function(){
 
     it('should quit game if "q" is entered', function(){
       //arrange
-      const input = "q"
+      const input = "q";
 
       //act
       const response = ticTacToe.updateGameStatus(input);
@@ -145,33 +145,28 @@ describe('ticTacToe', function(){
     });
 
   }); // updateGameStatus()
-  // describe('playGame()', function(){
-  //   beforeEach(function(){
-  //     ticTacToe = new Tic({
-  //       lastTurn: "O"
-  //     });
-  //   });
-  // }); // playGame()
 
-  // describe('isPlayValid', function(){
-  //   beforeEach(function(){
-  //     ticTacToe = new Tic({
-  //       lastTurn: "X"
-  //     });
-  //   });
-  //   it('should return true when user selects a space that is not currently occupied', function(){
-  //
-  //     //arrange
-  //     const inputLocation = "1,1"
-  //
-  //     //act
-  //     const response = ticTacToe.isPlayValid(inputLocation);
-  //
-  //     //assert
-  //     expect(response).to.equal(true);
-  //
-  //   });
-  // }); // isPlayValid()
+  describe('checkForWin()', function(){
+    beforeEach(function(){
+      ticTacToe = new Tic({
+        lastTurn: "O"
+      });
+    });
+    it('should notify players of a win when there are 3 "X"s or "O"s in a row', function(){
 
+      //arrange
+      ticTacToe.gameStatus = [
+        ["X", "X", "X"],
+        [".", ".", "."],
+        ["", ".", "."]
+      ];
+
+      //act
+      const response = ticTacToe.checkForWin("X");
+
+      //assert
+      expect(response).to.equal(true);
+    });
+  }); // checkForWin()
 
 });

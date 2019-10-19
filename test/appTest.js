@@ -6,29 +6,29 @@ let ticTacToe;
 
 describe('ticTacToe', function(){
 
-//   describe('updateBoard()', function(){
-//     beforeEach(function(){
-//       ticTacToe = new Tic({
-//         lastTurn: "O"
-//       });
-//     });
-//
-//     it('should start with an empty board', function(){
-//
-//       //arrange
-//
-//       //act
-//       const startBoard = ticTacToe.updateBoard();
-//
-//       //assert
-//       const expected = `. . .
-// . . .
-// . . .`
-//       expect(startBoard).to.equal(expected)
-//
-//     });
-//
-//   }); // currentBoard();
+  describe('printBoard()', function(){
+    beforeEach(function(){
+      ticTacToe = new Tic({
+        lastTurn: "O"
+      });
+    });
+
+    it('should start with an empty board', function(){
+
+      //arrange
+
+      //act
+      const startBoard = ticTacToe.updateBoard();
+
+      //assert
+      const expected = `. . .
+. . .
+. . .`
+      expect(startBoard).to.equal(expected)
+
+    });
+
+  }); // currentBoard();
 
 
   describe('prompt()', function(){

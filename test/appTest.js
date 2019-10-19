@@ -133,6 +133,17 @@ describe('ticTacToe', function(){
       expect(ticTacToe.numOfMoves).to.equal(1);
     });
 
+    it('should quit game if "q" is entered', function(){
+      //arrange
+      const input = "q"
+
+      //act
+      const response = ticTacToe.updateGameStatus(input);
+
+      //assert
+      expect(response).to.equal("\nGoodbye. Thanks for playing.");
+    });
+
   }); // updateGameStatus()
   // describe('playGame()', function(){
   //   beforeEach(function(){

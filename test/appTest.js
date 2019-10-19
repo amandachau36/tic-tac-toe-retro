@@ -14,7 +14,6 @@ describe('ticTacToe', function(){
     });
 
     it('should start with an empty board', function(){
-
       //arrange
 
       //act
@@ -26,10 +25,8 @@ describe('ticTacToe', function(){
 . . .
 `
       expect(startBoard).to.equal(expected)
-
     });
-
-  }); // currentBoard();
+  }); // printBoard();
 
 
   describe('prompt()', function(){
@@ -39,7 +36,6 @@ describe('ticTacToe', function(){
       });
     });
     it('should return the location 1,1', function(){
-
       //arrange
 
       //act
@@ -47,7 +43,6 @@ describe('ticTacToe', function(){
 
       //assert
       expect(response).to.equal("1,1");
-
     });
   }); // prompt()
 
@@ -58,7 +53,6 @@ describe('ticTacToe', function(){
       });
     });
     it('should return "X" for the first turn', function(){
-
       //arrange
 
       //act
@@ -66,7 +60,6 @@ describe('ticTacToe', function(){
 
       //assert
       expect(response).to.equal("X");
-
     });
   }); // currentTurn()
 
@@ -78,7 +71,6 @@ describe('ticTacToe', function(){
       });
     });
     it('should place an X in the top left hand corner', function(){
-
       //arrange
       const inputLocation = "1,1"
 
@@ -91,13 +83,11 @@ describe('ticTacToe', function(){
 
     });
     it('should inform player that "11" is not a valid coord', function(){
-
       //arrange
       const inputLocation = "11"
 
       //act
       const response = ticTacToe.updateGameStatus(inputLocation);
-
 
       //assert
       expect(response).to.equal(`${inputLocation} is not a valid coord. Try again...`);
@@ -105,13 +95,11 @@ describe('ticTacToe', function(){
     });
 
     it('should inform player that "1,4" is not a valid coord', function(){
-
       //arrange
       const inputLocation = "1,4"
 
       //act
       const response = ticTacToe.updateGameStatus(inputLocation);
-
 
       //assert
       expect(response).to.equal(`${inputLocation} is not a valid coord. Try again...`);
@@ -119,7 +107,6 @@ describe('ticTacToe', function(){
     });
 
     it('should inform player that "1,3" is not a valid coord when it is already occupied', function(){
-
       //arrange
       const inputLocation = "1,3"
       ticTacToe.gameStatus = [
@@ -128,15 +115,32 @@ describe('ticTacToe', function(){
         [".", ".", "."]
       ];
 
-
       //act
       const response = ticTacToe.updateGameStatus(inputLocation);
-
 
       //assert
       expect(response).to.equal(`Oh no, a piece is already at ${inputLocation}! Try again...`);
     });
+
+    it('should add 1 move to numOfMoves for every valid turn', function(){
+      //arrange
+      const inputLocation = "2,1"
+
+      //act
+      ticTacToe.updateGameStatus(inputLocation);
+
+      //assert
+      expect(ticTacToe.numOfMoves).to.equal(1);
+    });
+
   }); // updateGameStatus()
+  // describe('playGame()', function(){
+  //   beforeEach(function(){
+  //     ticTacToe = new Tic({
+  //       lastTurn: "O"
+  //     });
+  //   });
+  // }); // playGame()
 
   // describe('isPlayValid', function(){
   //   beforeEach(function(){

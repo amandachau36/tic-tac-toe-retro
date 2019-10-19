@@ -90,7 +90,7 @@ describe('ticTacToe', function(){
       const response = ticTacToe.updateGameStatus(inputLocation);
 
       //assert
-      expect(response).to.equal(`${inputLocation} is not a valid coord. Try again...`);
+      expect(response).to.equal(`${inputLocation} is not a valid coord. Try again... \n`);
 
     });
 
@@ -102,7 +102,7 @@ describe('ticTacToe', function(){
       const response = ticTacToe.updateGameStatus(inputLocation);
 
       //assert
-      expect(response).to.equal(`${inputLocation} is not a valid coord. Try again...`);
+      expect(response).to.equal(`${inputLocation} is not a valid coord. Try again... \n`);
 
     });
 
@@ -119,7 +119,7 @@ describe('ticTacToe', function(){
       const response = ticTacToe.updateGameStatus(inputLocation);
 
       //assert
-      expect(response).to.equal(`Oh no, a piece is already at ${inputLocation}! Try again...`);
+      expect(response).to.equal(`Oh no, a piece is already at ${inputLocation}! Try again...\n`);
     });
 
     it('should add 1 move to numOfMoves for every valid turn', function(){

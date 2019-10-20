@@ -1,6 +1,5 @@
 const expect = require('chai').expect;
 const Tic = require('../lib/tic.js');
-const readline = require('readline');
 
 let ticTacToe;
 

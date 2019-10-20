@@ -9,6 +9,7 @@ const ticTacToe = new Tic({
   lastTurn: "O"
 });
 
+//TODO: CleanUP
 // console.log(ticTacToe.currentTurn())
 
 // ticTacToe.prompt();

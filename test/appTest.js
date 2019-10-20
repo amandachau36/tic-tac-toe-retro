@@ -186,6 +186,40 @@ describe('ticTacToe', function(){
       //assert
       expect(response).to.equal(true);
     });
+    it('should notify players of a win when there are 3 "X"s or "O"s in a DIAGONAL from top left to bottom right', function(){
+
+      //arrange
+      ticTacToe.gameStatus = [
+        ["X", ".", "."],
+        [".", "X", "."],
+        [".", ".", "X"]
+      ];
+      const player = "X";
+
+      //act
+
+      const response = ticTacToe.checkForWin(player);
+
+      //assert
+      expect(response).to.equal(true);
+    });
+    it('should notify players of a win when there are 3 "X"s or "O"s in a DIAGONAL from bottom left to top right', function(){
+
+      //arrange
+      ticTacToe.gameStatus = [
+        [".", ".", "X"],
+        [".", "X", "."],
+        ["X", ".", "."]
+      ];
+      const player = "X";
+
+      //act
+
+      const response = ticTacToe.checkForWin(player);
+
+      //assert
+      expect(response).to.equal(true);
+    });
 
   }); // checkForWin()
 

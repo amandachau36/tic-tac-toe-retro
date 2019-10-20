@@ -20,3 +20,9 @@ const ticTacToe = new Tic({
 // ticTacToe.updateBoard();
 
 ticTacToe.playGame();
+// ticTacToe.gameStatus = [
+//   ["X", ".", ""],
+//   ["X", ".", "."],
+//   ["X", ".", "."]
+// ];
+// console.log(ticTacToe.checkForWin("X"))

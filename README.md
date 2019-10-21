@@ -14,13 +14,12 @@ To implement a console based version of Tic Tac Toe that allows two human player
 * A player wins when all fields in a row are taken by the player.
 * A player wins when all fields in a diagonal are taken by the player.
 
-
 ### Condition for a draw:
 * The game is drawn when all fields are taken on the board AND there are no wins.
 
 ## Assumptions
 * Input coord must be in `num,num` format. Player will receive an error message for input such as `1,4`, `cat`, `1000000` or `0,3`. However `-1,2` and `1,2,3` is interpreted as `1,2`. Therefore, I assume that users will enter positive numbers only and only 2 numbers separated by one comma.
-* I assumed that the board scaling the board to n x n (e.g. 4x4 or 5x5 etc) is not important.
+* I assumed that scaling the board to n x n (e.g. 4x4 or 5x5 etc) is not important.
 * I assumed that when there is a winner, draw, or someone gives up that the game exits. Therefore, I did not keep score or ask if the players would like to play again.
 * I assumed that if a piece (X or O) is at particular position that another piece cannot replace it.  
 

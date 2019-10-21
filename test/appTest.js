@@ -8,7 +8,7 @@ describe('ticTacToe', function(){
   describe('printBoard()', function(){
     beforeEach(function(){
       ticTacToe = new Tic({
-        lastTurn: "O"
+        currentTurn: "X"
       });
     });
 
@@ -31,7 +31,7 @@ describe('ticTacToe', function(){
   describe('prompt()', function(){
     beforeEach(function(){
       ticTacToe = new Tic({
-        lastTurn: "O"
+        currentTurn: "X"
       });
     });
     it('should return the location 1,1', function(){
@@ -45,17 +45,17 @@ describe('ticTacToe', function(){
     });
   }); // prompt()
 
-  describe('currentTurn()', function(){
+  describe('nextTurn()', function(){
     beforeEach(function(){
       ticTacToe = new Tic({
-        lastTurn: "O"
+        currentTurn: "X"
       });
     });
     it('should return "X" for the first turn', function(){
       //arrange
 
       //act
-      const response = ticTacToe.currentTurn();
+      const response = ticTacToe.currentTurn;
 
       //assert
       expect(response).to.equal("X");
@@ -66,7 +66,7 @@ describe('ticTacToe', function(){
   describe('updateGameStatus()', function(){
     beforeEach(function(){
       ticTacToe = new Tic({
-        lastTurn: "O"
+        currentTurn: "X"
       });
     });
     it('should place an X in the top left hand corner', function(){
@@ -148,7 +148,7 @@ describe('ticTacToe', function(){
   describe('checkForWin()', function(){
     beforeEach(function(){
       ticTacToe = new Tic({
-        lastTurn: "O"
+        currentTurn: "X"
       });
     });
     it('should notify players of a win when there are 3 "X"s or "O"s in a ROW', function(){

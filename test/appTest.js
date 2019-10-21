@@ -142,6 +142,22 @@ describe('ticTacToe', function(){
       //assert
       expect(response).to.equal("\nGoodbye. Thanks for playing.");
     });
+    it('should say draw game if there are 9 moves and no wins', function(){
+      //arrange
+      ticTacToe.gameStatus = [
+        ["X", "O", "."],
+        ["X", "O", "X"],
+        ["O", "X", "O"]
+      ];
+      ticTacToe.numOfMoves = 8;
+      const input = "1,3";
+
+      //act
+      const response = ticTacToe.updateGameStatus(input);
+
+      //assert
+      expect(response).to.equal(`\nMove accepted, draw game!\n\n${ticTacToe.updateBoard()}`);
+    });
 
   }); // updateGameStatus()
 
@@ -161,9 +177,7 @@ describe('ticTacToe', function(){
         [".", ".", "."]
       ];
 
-
       //act
-
       const response = ticTacToe.checkForWin();
 
       //assert
@@ -177,10 +191,8 @@ describe('ticTacToe', function(){
         ["X", ".", "."],
         ["X", ".", "."]
       ];
-      const player = "X";
 
       //act
-
       const response = ticTacToe.checkForWin();
 
       //assert
@@ -194,10 +206,8 @@ describe('ticTacToe', function(){
         [".", "X", "."],
         [".", ".", "X"]
       ];
-      const player = "X";
 
       //act
-
       const response = ticTacToe.checkForWin();
 
       //assert
@@ -211,16 +221,13 @@ describe('ticTacToe', function(){
         [".", "X", "."],
         ["X", ".", "."]
       ];
-      const player = "X";
 
       //act
-
       const response = ticTacToe.checkForWin();
 
       //assert
       expect(response).to.equal(true);
     });
-
   }); // checkForWin()
 
 });

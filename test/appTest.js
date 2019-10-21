@@ -154,16 +154,17 @@ describe('ticTacToe', function(){
     it('should notify players of a win when there are 3 "X"s or "O"s in a ROW', function(){
 
       //arrange
+      ticTacToe.currentTurn = "O";
       ticTacToe.gameStatus = [
         ["O", "O", "O"],
         [".", ".", "."],
         [".", ".", "."]
       ];
-      const player = "O";
+
 
       //act
 
-      const response = ticTacToe.checkForWin(player);
+      const response = ticTacToe.checkForWin();
 
       //assert
       expect(response).to.equal(true);
@@ -180,7 +181,7 @@ describe('ticTacToe', function(){
 
       //act
 
-      const response = ticTacToe.checkForWin(player);
+      const response = ticTacToe.checkForWin();
 
       //assert
       expect(response).to.equal(true);
@@ -197,7 +198,7 @@ describe('ticTacToe', function(){
 
       //act
 
-      const response = ticTacToe.checkForWin(player);
+      const response = ticTacToe.checkForWin();
 
       //assert
       expect(response).to.equal(true);
@@ -214,7 +215,7 @@ describe('ticTacToe', function(){
 
       //act
 
-      const response = ticTacToe.checkForWin(player);
+      const response = ticTacToe.checkForWin();
 
       //assert
       expect(response).to.equal(true);
